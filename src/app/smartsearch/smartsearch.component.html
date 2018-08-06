@@ -1,0 +1,23 @@
+
+<h2>My Elements</h2>
+
+
+   <input auto-complete 
+   [(ngModel)]="mySelectedDeal" 
+   [source]="deals"
+   placeholder="Enter Deal"
+   value-formatter="(id) dealname relationshipname"
+   list-formatter ="(id) dealname relationshipname"
+   [match-formatted]="true"
+
+   />
+        
+<ul class="deals">
+  <li *ngFor="let deal of deals">
+    <span class="badge">{{deal.id}}</span>
+    <ul>
+   		<li>deal {{deal.dealname}}</li>
+   		<li>relationship {{deal.relationshipname}}</li>
+   		</ul>
+  </li>
+</ul>
